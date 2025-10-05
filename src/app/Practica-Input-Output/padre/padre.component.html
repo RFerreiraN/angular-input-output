@@ -1,0 +1,18 @@
+<div>
+  <h1>Contador Reactivo:</h1>
+  <p>Contador : <strong>{{ contador }}</strong></p>
+  <button (click)="incrementar()">Incrementar</button>
+  <button (click)="decrementar()">Decrementar</button>
+  <button (click)="resetear()">Reset</button>
+</div>
+
+<hr>
+
+<div>
+    <h3>Comunicación entre componentes (@Input() / @Output())</h3>
+    <h2>@Input:</h2>
+    <hr/>
+    <app-hijo [hijoRecibe]="mensajePadre"/>
+    <h2>@Output:</h2>
+
+</div>
