@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class PadreComponent {
   contador : number = 0;
+  mensajePadre : string = 'Este es el mensaje del padre al hijo @Input()!!'
+  mensajeRecibido : string = '' //@Output
+
+  // Funciones del Contador
   incrementar(){
     this.contador++
   };
@@ -16,6 +20,10 @@ export class PadreComponent {
   resetear(){
     this.contador = 0
   };
-  mensajePadre : string = 'Este es el mensaje del padre al hijo!!'
+
+  //Funcion(es) de @Output( )
+  recibirMensaje($event : string){
+    this.mensajeRecibido = $event
+  }
 
 }
