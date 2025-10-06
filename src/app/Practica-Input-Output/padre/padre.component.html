@@ -1,24 +1,6 @@
-<div>
-  <h1>Contador Reactivo:</h1>
-  <p>Contador : <strong>{{ contador }}</strong></p>
- 
-</div>
+<h1>Comunicación entre Padre e Hijos</h1>
+<h3>@Input( ):</h3>
 
-<hr>
+<app-hijo />
 
-<div>
-    <h1>Comunicación entre componentes (@Input() / @Output())</h1>
-
-    <h2>@Input:</h2>
-    <hr/>
-    
-    <h2>@Output:</h2>
-    <app-hijo 
-    [hijoRecibe]="mensajePadre"  
-    (mensajeParaPadre)="recibirMensaje($event)"
-    (incrementarDesdeHijo)="incrementar()"
-    (decrementarDesdeHijo)="decrementar()"
-    (resetearDesdeHijo)="resetear()"
-    />
-    <p>El mensaje del hijo al Padre es: {{ mensajeRecibido }}</p>
-</div>
+<p></p>

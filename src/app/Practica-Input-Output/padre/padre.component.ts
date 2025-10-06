@@ -6,24 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./padre.component.css']
 })
 export class PadreComponent {
-  contador : number = 0;
-  mensajePadre : string = 'Este es el mensaje del padre al hijo @Input()!!'
-  mensajeRecibido : string = '' //@Output
+  //@Input()
+ 
+  //@Output()
 
-  // Funciones del Contador
-  incrementar(){
-    this.contador++
-  };
-  decrementar(){
-    this.contador--
-  };
-  resetear(){
-    this.contador = 0
-  };
-
-  //Funcion(es) de @Output( )
-  recibirMensaje($event : string){
-    this.mensajeRecibido = $event
-  }
-
+  
+  
 }

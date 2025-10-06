@@ -1,18 +1,4 @@
-<hr>
-<div> <!-- Movimos los botones del contador al hijo, el padre maneja la logica (por eso se ve desordenado en la vista)-->
-  <button (click)="incrementar()">Incrementar</button>
-  <button (click)="decrementar()">Decrementar</button>
-  <button (click)="resetear()">Reset</button>
-  <p>Esto es del Contador, con eventos que se envian al padre</p>
-</div><hr>
+<!-- @Input( ) -->
 
-<div>
-  <p>{{hijoRecibe}}</p>
-</div>
-
-<div> 
-  <label for="output">Escribir mensaje para Padre: </label>
-  <input type="text" id="output" [(ngModel)]="mensaje">
-  <button type="button" (click)="enviarMensaje()">Enviar Mensaje</button>
-</div>
-
+<!-- @Output ( ) -->
+<h3>Output( ):</h3>
