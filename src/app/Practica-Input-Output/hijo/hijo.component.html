@@ -1,4 +1,10 @@
 <!-- @Input( ) -->
-
+<p>Padre dice :  <strong>{{ mensajeViewChild }}</strong> </p>
+<p>Otro mensaje de Padre: <strong>{{ mensajeRecibidoDePadre }}</strong></p>
 <!-- @Output ( ) -->
-<h3>Output( ):</h3>
+<h3>@Output( ):</h3>
+<div>
+  <label for="mensajeOutput">Mensaje para padre: </label>
+  <input type="text" id="mensajeOutput" [(ngModel)]="mensajeInputText">
+  <button (click)="enviarMensajeAPadre()">Enviar Mensaje</button>
+</div>

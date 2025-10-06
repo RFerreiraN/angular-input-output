@@ -1,6 +1,14 @@
 <h1>Comunicación entre Padre e Hijos</h1>
 <h3>@Input( ):</h3>
+<div>
+  <label for="mensajeHijo">Mensaje para hijo: </label>
+  <input type="text" id="mensajeHijo" [(ngModel)]="mensajeParaHijo">
+  <button type="button" (click)="enviarAHijo()">Enviar Mensaje</button>
+</div>
 
-<app-hijo />
+<app-hijo 
+[mensajeRecibidoDePadre]="mensajeInputParaHijo"
+(mensajeEnviadoAPadre)="mensajeARecibir($event)" 
+/>
 
-<p></p>
+<p>Hijo dice : <strong>{{ mensajeRecibidoDeHijo }}</strong></p>

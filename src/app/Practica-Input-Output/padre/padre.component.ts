@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { HijoComponent } from '../hijo/hijo.component';
 
 @Component({
   selector: 'app-padre',
@@ -7,9 +8,21 @@ import { Component } from '@angular/core';
 })
 export class PadreComponent {
   //@Input()
- 
+  @ViewChild(HijoComponent) hijo!: HijoComponent;
+  
+  mensajeParaHijo : string = ''
+  mensajeInputParaHijo : string = 'Hola Hijo';
+  enviarAHijo(){
+    this.hijo.recibeMensaje(this.mensajeParaHijo)
+  }
+  
   //@Output()
 
+  mensajeRecibidoDeHijo : string = '';
+
+  mensajeARecibir($event : string){
+    this.mensajeRecibidoDeHijo = $event
+  }
   
   
 }
