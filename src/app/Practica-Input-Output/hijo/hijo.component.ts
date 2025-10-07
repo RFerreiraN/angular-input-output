@@ -6,20 +6,26 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./hijo.component.css']
 })
 export class HijoComponent {
+  //Comunicación con  @Input( )
+  @Input() mensajeDecoradorInput : string = '';
 
-  @Input() mensajeRecibidoDePadre : string = '';
-  @Output() mensajeEnviadoAPadre = new EventEmitter<string>();
+  /* ************************************************* */
 
-  mensajeViewChild : string = '';
-  mensajeInputText : string = '';
+  //Comunicación con @ViewChild( )
+  mensajeDePadre : string = '';
 
-  recibeMensaje( mensaje : string){
-      this.mensajeViewChild = mensaje
-  }
+  hijoRecibe( mensaje : string){
+    this.mensajeDePadre = mensaje
+  };
+
+/* ************************************************* */
+
+  //Comunicación con @Output( ) mensaje de hijo a padre
+  @Output() mensajeParaPadreEvent= new EventEmitter<string>();
+  mensajeParaPadre : string = '';
 
   enviarMensajeAPadre(){
-    this.mensajeEnviadoAPadre.emit( this.mensajeInputText )
+    this.mensajeParaPadreEvent.emit( this.mensajeParaPadre )
   }
-
 
 }

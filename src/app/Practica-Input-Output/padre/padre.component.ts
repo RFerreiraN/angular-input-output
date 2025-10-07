@@ -7,22 +7,24 @@ import { HijoComponent } from '../hijo/hijo.component';
   styleUrls: ['./padre.component.css']
 })
 export class PadreComponent {
-  //@Input()
+  //Comunicación de Padre a Hijo por método directo (ViewChild)
   @ViewChild(HijoComponent) hijo!: HijoComponent;
+  mensajeParaHijo : string = '';
   
-  mensajeParaHijo : string = ''
-  mensajeInputParaHijo : string = 'Hola Hijo';
   enviarAHijo(){
-    this.hijo.recibeMensaje(this.mensajeParaHijo)
-  }
+    this.hijo.hijoRecibe( this.mensajeParaHijo )
+  };
+
+  //Comunicación de Padre a hijo por @Input ( )
+
+  mensajePadreDecoradorInput : string = 'Este mensaje es recibido por el hijo por el decorador @Input( )'
   
-  //@Output()
+
+  //Comunicación de Hijo a Padre ( hijo envia a padre ) @Output( )
 
   mensajeRecibidoDeHijo : string = '';
 
-  mensajeARecibir($event : string){
+  recibirDeHijo($event : string){
     this.mensajeRecibidoDeHijo = $event
   }
-  
-  
 }

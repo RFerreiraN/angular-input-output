@@ -1,10 +1,11 @@
 <!-- @Input( ) -->
-<p>Padre dice :  <strong>{{ mensajeViewChild }}</strong> </p>
-<p>Otro mensaje de Padre: <strong>{{ mensajeRecibidoDePadre }}</strong></p>
+<p>El mensaje de Padre al hijo es: <strong>{{ mensajeDePadre }}</strong></p>
+<h3>@Input( )</h3>
+<p>Mesaje recibido por @Input( ): <strong>{{ mensajeDecoradorInput }}</strong></p>
 <!-- @Output ( ) -->
 <h3>@Output( ):</h3>
 <div>
-  <label for="mensajeOutput">Mensaje para padre: </label>
-  <input type="text" id="mensajeOutput" [(ngModel)]="mensajeInputText">
-  <button (click)="enviarMensajeAPadre()">Enviar Mensaje</button>
+  <label for="mensajeParaPadre">Mensaje de Hijo a Padre: </label>
+  <input type="text" id="mensajeParaPadre" [(ngModel)]="mensajeParaPadre">
+  <button type="button" (click)="enviarMensajeAPadre()">Enviar Mensaje</button>
 </div>
